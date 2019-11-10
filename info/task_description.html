@@ -20,7 +20,7 @@
     Initial position of the fly is defined by <b>x0</b> and <b>y0</b>, which are assigned arbitrary but it's guaranteed that the fly is inside the jar by the time we start to observe it.
     In the very beginning the fly's flying linearly, <b>Vx</b> and <b>Vy</b> are a horizontal and a vertical components of the velocity vector respectively.
     When the fly hits a wall, it deflects from it and fly in the opposite direction (like a billiard ball). The drawing above illustrates how it works.
-    Also, there's one tiny detail: after each collision the fly loses 5% of its initial stamina, getting tired. So after 20 collisions the fly becomes completely exhausted.
+    Also, there's one tiny detail: after each collision the fly loses 5% of its initial stamina, getting tired (velocity remains the same though). So after 20 collisions the fly becomes completely exhausted.
     The fly's size is negligible.
 </p>
 
@@ -71,5 +71,6 @@ escape([1000, 1000, 200], [450, 50, 0, -100]) == True
         <li>y0 ∈ [0; H]</li>
         <li>vx ∈ (-2W; 2W)</li>
         <li>vy ∈ (-2H; 2H)</li>
+        <li>V != 0</li>
     </ul>
 </p>
