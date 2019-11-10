@@ -7,6 +7,27 @@ Each test is a dict with
     "explanation" -- not necessarily a key, it's used for an additional info in animation.
 """
 
+from verification.compr import judge
+from random import randint
+
+
+def test_set_make(n):
+    rands = []
+    for _ in range(n):
+        W = randint(100, 1000)
+        H = randint(W, 4*W)
+        d = randint(0.1*W, 0.8*W)
+        jar = [W, H, d]
+
+        x0 = randint(0, W)
+        y0 = randint(0, H)
+        vx = randint(-2*W+1, 2*W-1)
+        vy = randint(-2*H+1, 2*H-1)
+        fly = [x0, y0, vx, vy]
+
+        rands.append({"input": [jar, fly], "answer": judge(jar, fly)})
+    return rands
+
 
 TESTS = {
     "Basics": [
@@ -72,5 +93,6 @@ TESTS = {
             "input": [[1200, 2000, 350], [600, 1999, 600, 1]],
             "answer": 0
         }
-    ]
+    ],
+    "Randoms": test_set_make(10)
 }
