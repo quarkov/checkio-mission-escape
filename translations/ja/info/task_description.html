@@ -1,0 +1,82 @@
+<!-- Describe task in general -->
+
+<p>
+    ここにハエの入った瓶があります。
+    ハエはここから出たくて必死に飛び回っています。
+    あなたの仕事はハエが出られるか ( True ) 否か ( False ) 推測することです。
+</p>
+
+<p style="text-align: center;">
+    <img  title="fly's in the jar" src="{{MEDIA}}example.png" alt="example" style="max-height: 250px"/>
+</p>
+
+<p align="justify">
+    上図の長方形が瓶です。
+    <strong>W</strong> が幅、<strong>H</strong> が高さを表します。
+    瓶の上部中央には <strong>d</strong> の長さの口がありハエはここから脱出できます。
+    <strong>O</strong> は原点であり Y軸は左側面に、X軸は底面に一致します。
+    壁面の厚さは無視します。
+</p>
+
+<p align="justify">
+    ハエの初期位置は <strong>x0</strong> と <strong>y0</strong> です。
+    我々がハエを観察し始める際に必ず瓶の中にいます。
+    ハエは直線的に飛んでおり <strong>Vx</strong> と <strong>Vy</strong> は水平、垂直の速度を表します。
+    ハエは壁に当たるとビリヤードの玉のように反対方向に反射します。
+    上図はその様子を説明しています。
+    その衝突の際にハエは体力の 5% を失います。(しかし速度は維持します。)
+    つまり ハエは壁に 20 回衝突すると疲れ果てます。
+    ハエの大きさは無視します。
+</p>
+
+
+<!-- Explain input and output values -->
+<p>
+    <strong>入力: </strong> 二つの整数のリスト:
+    <ul>
+        <li>一つ目は瓶の詳細 [W, H, d]</li>
+        <li>二つ目はハエの詳細 [x0, y0, vx, vy]</li>
+    </ul>
+</p>
+
+<p>
+    <strong>出力: </strong> True か False
+</p>
+
+
+<!-- Give some usage examples -->
+<div class="for_info_only">
+    <p>
+        <strong>例:</strong>
+    </p>
+
+{% if interpreter.slug == "js-node" %}
+<pre class="brush: javascript">escape([1000, 1000, 200], [0, 0, 100, 0]) == False
+escape([1000, 1000, 200], [450, 50, 0, -100]) == True
+</pre>
+{% else %}
+<pre class="brush: python">escape([1000, 1000, 200], [0, 0, 100, 0]) == False
+escape([1000, 1000, 200], [450, 50, 0, -100]) == True
+</pre>
+{% endif %}
+</div>
+
+
+<!-- Here you can explain how it can be used in development -->
+
+<!-- The section is optional -->
+<p>
+    <strong>前提条件:</strong><br>
+    全ての値の単位は抽象的なものです。速度は単位 / 秒とします。
+    <ul>
+        <li>W ∈ [100; 1000]</li>
+        <li>H ∈ [W; 4W]</li>
+        <li>d ∈ [0.1W; 0.8W]</li>
+        <li>x0 ∈ [0; W]</li>
+        <li>y0 ∈ [0; H]</li>
+        <li>vx ∈ (-2W; 2W)</li>
+        <li>vy ∈ (-2H; 2H)</li>
+        <li>V != 0</li>
+    </ul>
+</p>
+
