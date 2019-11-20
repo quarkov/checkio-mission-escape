@@ -2,7 +2,7 @@
 
 <p>
     There is an open jar and a fly inside it.
-    That fly's flying from side to side frantically because it really wants to get away from there.
+    That fly is flying from side to side frantically because it really wants to get away from there.
     Your task is to estimate whether it will succeed in its attempts (return True) or not (return False).
 </p>
 
@@ -12,13 +12,13 @@
 
 <p align="justify">
     So what do we got? The jar is represented by a rectangle in the drawing above. It has width <b>W</b> and height <b>H</b>.
-    The jar has a hole of the size <b>d</b> our fly can escape through. The hole is always placed on the top of the jar and the jar is symmetrical.
+    The jar has a hole of the size <b>d</b>. Our fly can escape through it. The hole is always placed on the top of the jar and the jar is symmetrical.
     Point <b>O</b> is the origin, the y-axis matches the jar's left side and the x-axis matches the jar's bottom side. The wall thickness is negligible.
 </p>
 
 <p align="justify">
-    Initial position of the fly is defined by <b>x0</b> and <b>y0</b>, which are assigned arbitrary but it's guaranteed that the fly is inside the jar by the time we start to observe it.
-    In the very beginning the fly's flying linearly, <b>Vx</b> and <b>Vy</b> are a horizontal and a vertical components of the velocity vector respectively.
+    Initial position of the fly is defined by <b>x0</b> and <b>y0</b>, which are assigned arbitrary. But it's guaranteed that the fly is inside the jar by the time we start to observe it.
+    In the very beginning the fly is flying linearly, <b>Vx</b> and <b>Vy</b> are a horizontal and vertical components of the velocity vector respectively.
     When the fly hits a wall, it deflects from it and fly in the opposite direction (like a billiard ball). The drawing above illustrates how it works.
     Also, there's one tiny detail: after each collision the fly loses 5% of its initial stamina, getting tired (velocity remains the same though). So after 20 collisions the fly becomes completely exhausted.
     The fly's size is negligible.
@@ -62,7 +62,7 @@ escape([1000, 1000, 200], [450, 50, 0, -100]) == True
 <!-- The section is optional -->
 <p>
     <strong>Precondition:</strong><br>
-    All dimension are given in abstract units, velocities are given in units/sec.
+    All dimensions are given in abstract units, velocities are given in units/sec.
     <ul>
         <li>W ∈ [100; 1000]</li>
         <li>H ∈ [W; 4W]</li>
@@ -74,3 +74,4 @@ escape([1000, 1000, 200], [450, 50, 0, -100]) == True
         <li>V != 0</li>
     </ul>
 </p>
+
