@@ -13,10 +13,10 @@ if (!global.is_checking) {
     console.log(escape([1000, 1000, 200], [0, 0, 100, 0]));
 
     // These "asserts" are used for self-checking and not for an auto-testing
-    assert.equal(escape([1000, 1000, 200], [0, 0, 100, 0]), False);
-    assert.equal(escape([1000, 1000, 200], [450, 50, 0, -100]), True);
-    assert.equal(escape([1000, 1000, 200], [450, 1000, 100, 0]), False);
-    assert.equal(escape([1000, 1000, 200], [250, 250, -10, -50]), False);
-    assert.equal(escape([1000, 2000, 200], [20, 35, 100, 175]), True);
+    assert.equal(escape([1000, 1000, 200], [0, 0, 100, 0]), false);
+    assert.equal(escape([1000, 1000, 200], [450, 50, 0, -100]), true);
+    assert.equal(escape([1000, 1000, 200], [450, 1000, 100, 0]), false);
+    assert.equal(escape([1000, 1000, 200], [250, 250, -10, -50]), false);
+    assert.equal(escape([1000, 2000, 200], [20, 35, 100, 175]), true);
     console.log("Coding complete? Click 'Check' to earn cool rewards!");
 }
