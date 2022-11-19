@@ -3,7 +3,7 @@
 <p>
     There is an open jar and a fly inside it.
     That fly is flying from side to side frantically because it really wants to get away from there.
-    Your task is to estimate whether it will succeed in its attempts (return True) or not (return False).
+    Your task is to estimate whether it will succeed in its attempts (return {% if is_js %}t{% else %}T{% endif %}rue) or not (return {% if is_js %}f{% else %}F{% endif %}alse).
 </p>
 
 <p style="text-align: center;">
@@ -13,7 +13,7 @@
 <p align="justify">
     So what do we got? The jar is represented by a rectangle in the drawing above. It has width <b>W</b> and height <b>H</b>.
     The jar has a hole of the size <b>d</b>. Our fly can escape through it. The hole is always placed on the top of the jar and the jar is symmetrical.
-    Point <b>O</b> is the origin, the y-axis matches the jar's left side and the x-axis matches the jar's bottom side. The wall thickness is negligible.
+    Point <b>O</b> is the origin, the <b>y</b> axis matches the jar's left side and the <b>y</b> axis matches the jar's bottom side. The wall thickness is negligible.
 </p>
 
 <p align="justify">
@@ -27,41 +27,26 @@
 
 <!-- Explain input and output values -->
 <p>
-    <strong>Input: </strong> Two lists of integers:
+    <strong>Input:</strong><br />
+    Two {% if is_js %}Arrays of numbers{% else %}lists of integers{% endif %}:
     <ul>
-        <li>the first contains jar's dims [W, H, d]</li>
-        <li>the second contains fly's characteristics [x0, y0, vx, vy]</li>
+        <li>the first contains jar's dims [W, H, d];</li>
+        <li>the second contains fly's characteristics [x0, y0, vx, vy].</li>
     </ul>
 </p>
 
 <p>
-    <strong>Output: </strong> True or False.
+    <strong>Output:</strong> Boolean.
 </p>
 
 
 <!-- Give some usage examples -->
 <div class="for_info_only">
     <p>
-        <strong>Example:</strong>
+        <strong>Examples:</strong>
     </p>
 
-{% if interpreter.slug == "js-node" %}
-<pre class="brush: javascript">escape([1000, 500, 200], [0, 0, 100, 0]) == false
-escape([1000, 500, 200], [450, 50, 0, -100]) == true
-escape([1000, 1000, 200], [450, 1000, 100, 0]) == false
-escape([1000, 1000, 200],
- [250, 250, -10, -50]) == false
-escape([1000, 2000, 200], [20, 35, 100, 175]) == true
-</pre>
-{% else %}
-<pre class="brush: python">escape([1000, 500, 200], [0, 0, 100, 0]) == False
-escape([1000, 500, 200], [450, 50, 0, -100]) == True
-escape([1000, 1000, 200], [450, 1000, 100, 0]) == False
-escape([1000, 1000, 200],
- [250, 250, -10, -50]) == False
-escape([1000, 2000, 200], [20, 35, 100, 175]) == True
-</pre>
-{% endif %}
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 </div>
 
 
@@ -69,17 +54,17 @@ escape([1000, 2000, 200], [20, 35, 100, 175]) == True
 
 <!-- The section is optional -->
 <p>
-    <strong>Precondition:</strong><br>
+    <strong>Preconditions:</strong><br />
     All dimensions are given in abstract units, velocities are given in units/sec.
     <ul>
-        <li>W ∈ [100; 1000]</li>
-        <li>H ∈ [W; 4W]</li>
-        <li>d ∈ [0.1W; 0.8W]</li>
-        <li>x0 ∈ [0; W]</li>
-        <li>y0 ∈ [0; H]</li>
-        <li>vx ∈ (-2W; 2W)</li>
-        <li>vy ∈ (-2H; 2H)</li>
-        <li>V != 0</li>
+        <li>W ∈ [100; 1000];</li>
+        <li>H ∈ [W; 4W];</li>
+        <li>d ∈ [0.1W; 0.8W];</li>
+        <li>x0 ∈ [0; W];</li>
+        <li>y0 ∈ [0; H];</li>
+        <li>vx ∈ (-2W; 2W);</li>
+        <li>vy ∈ (-2H; 2H);</li>
+        <li>V != 0.</li>
     </ul>
 </p>
 

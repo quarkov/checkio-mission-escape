@@ -34,8 +34,8 @@
 <p>
     <strong>入力: </strong> 二つの整数のリスト:
     <ul>
-        <li>一つ目は瓶の詳細 [W, H, d]</li>
-        <li>二つ目はハエの詳細 [x0, y0, vx, vy]</li>
+        <li>一つ目は瓶の詳細 [W, H, d];</li>
+        <li>二つ目はハエの詳細 [x0, y0, vx, vy].</li>
     </ul>
 </p>
 
@@ -50,23 +50,7 @@
         <strong>例:</strong>
     </p>
 
-{% if interpreter.slug == "js-node" %}
-<pre class="brush: javascript">escape([1000, 500, 200], [0, 0, 100, 0]) == false
-escape([1000, 500, 200], [450, 50, 0, -100]) == true
-escape([1000, 1000, 200], [450, 1000, 100, 0]) == false
-escape([1000, 1000, 200],
- [250, 250, -10, -50]) == false
-escape([1000, 2000, 200], [20, 35, 100, 175]) == true
-</pre>
-{% else %}
-<pre class="brush: python">escape([1000, 500, 200], [0, 0, 100, 0]) == False
-escape([1000, 500, 200], [450, 50, 0, -100]) == True
-escape([1000, 1000, 200], [450, 1000, 100, 0]) == False
-escape([1000, 1000, 200],
- [250, 250, -10, -50]) == False
-escape([1000, 2000, 200], [20, 35, 100, 175]) == True
-</pre>
-{% endif %}
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 </div>
 
 
@@ -77,14 +61,14 @@ escape([1000, 2000, 200], [20, 35, 100, 175]) == True
     <strong>前提条件:</strong><br>
     全ての値の単位は抽象的なものです。速度は単位 / 秒とします。
     <ul>
-        <li>W ∈ [100; 1000]</li>
-        <li>H ∈ [W; 4W]</li>
-        <li>d ∈ [0.1W; 0.8W]</li>
-        <li>x0 ∈ [0; W]</li>
-        <li>y0 ∈ [0; H]</li>
-        <li>vx ∈ (-2W; 2W)</li>
-        <li>vy ∈ (-2H; 2H)</li>
-        <li>V != 0</li>
+        <li>W ∈ [100; 1000];</li>
+        <li>H ∈ [W; 4W];</li>
+        <li>d ∈ [0.1W; 0.8W];</li>
+        <li>x0 ∈ [0; W];</li>
+        <li>y0 ∈ [0; H];</li>
+        <li>vx ∈ (-2W; 2W);</li>
+        <li>vy ∈ (-2H; 2H);</li>
+        <li>V != 0.</li>
     </ul>
 </p>
 

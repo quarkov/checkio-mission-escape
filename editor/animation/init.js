@@ -1,6 +1,6 @@
 //Dont change it
 //Dont change it
-requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
+requirejs(['ext_editor_io2', 'jquery_190', 'raphael_210'],
     function (extIO, $) {
         function escapeCanvas(dom, data) {
 
@@ -165,11 +165,6 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
         var $tryit;
 
         var io = new extIO({
-            multipleArguments: true,
-            functions: {
-                python: 'escape',
-                js: 'escape'
-            },
             animation: function($expl, data){
                 escapeCanvas(
                     $expl[0],
